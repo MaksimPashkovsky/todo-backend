@@ -15,7 +15,7 @@ class MongodbService:
         return cls._instance
 
     def __init__(self):
-        self._client = MongoClient(host=Config.DB_HOST, port=Config.DB_PORT)
+        self._client = MongoClient(Config.MONGODB_URI)
         self._db = self._client[Config.DB_NAME]
         self._collection = self._db[Config.DB_COLLECTION]
 
